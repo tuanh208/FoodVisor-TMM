@@ -1,0 +1,42 @@
+1. Create the machine and install all necessary libs:
+https://nprost.github.io/teaching/azure
+2. Connect to VM via PuTTY Windows
+- Open PuTTY
+- Start the VM and click Connect
+- Copy the Public IP address on the azure website and paste into IP address in PuTTY
+- Write the correct port number
+- Open (-> Yes)
+3. Create the necessary folders for the project 
+From the home directory
+> mkdir FoodVisor (or whatever name you want)
+> cd FoodVisor
+> mkdir data (to store data later)
+> git clone "https://github.com/tuanh208/FoodVisor-TMM" (clone the project sur git)
+4. Download the data
+ATTENTION: The size of the data(zipped) is 11GB and the unzipped is 20GB, while the free space of disk is ~ 20GB (in fact its size is 30GB but the libraries took 10GB) so we'll download the file to the "temporary disk" in "/mnt". (to see the details of disk: "df -h")
+> cd /mnt
+> wget "http://visiir.lip6.fr/data/public/UPMC_Food101.tar.gz"
+> tar --extract --file=UPMC_Food101.tar.gz images/
+> sudo mv images ~/FoodVisor/data
+5. To run jupyter notebook on ssh
+Must exit and restart PuTTY
+- Open PUTTY and enter the server URL or IP address as the hostname
+- Go to SSH on the bottom of the left pane to expand the menu and then click on Tunnels
+- Enter the port number which you want to use to access Jupyter on your local machine. Choose 8000 or greater (ie 8001, 8002, etc.) to avoid ports used by other services, and set the destination as localhost:8888 where :8888 is the number of the port that Jupyter Notebook is running on. Now click the Add button, and the ports should appear in the Forwarded ports list.
+- Click the Open button to connect to the server via SSH
+In ssh terminal
+- jupyter notebook --no-browser --port=8888
+- copy the token in (example) :
+[I 14:51:55.020 NotebookApp] The Jupyter Notebook is running at:
+[I 14:51:55.020 NotebookApp] http://localhost:8888/?token=50db4e03cbecc86825e933                                                                                                                                                             5c54adf6f91b4e6de8338587a2
+(in this case it is 50db4e03cbecc86825e9335c54adf6f91b4e6de8338587a2)
+In your computer, start a browser
+- Go to http://localhost:8000 and paste the token to start !!
+NOTE: If you want to use ssh terminal in the same time when using jupyter, start another screen (it's like you can use multiple windows at the same time):
+From the ssh terminal
+> screen (a screen program apprears)
+- To start a new terminal window: press Ctrl+A followed by Ctrl+C 
+- To change between the windows: press Ctrl+A then Ctrl+A
+- To detach from the screen session: press Ctrl+A Ctrl+D. You can then disconnect from the host and log in again later and use screen -dr to resume your session.
+- To go to a specific screen window: press Ctrl+A followed by a number.
+Screen will exit when all active windows are closed (or the shells within have exited).
