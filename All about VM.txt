@@ -43,4 +43,4 @@ Screen will exit when all active windows are closed (or the shells within have e
 6. GPU
 https://docs.fast.ai/dev/gpu.html
 Miracle line :
->nvidia-smi --query-gpu=timestamp,memory.used,memory.total --format=csv -l 1
+> nvidia-smi --query-gpu=timestamp,memory.used,memory.total --format=csv -l 1
