@@ -25,7 +25,7 @@ Must exit and restart PuTTY
 - Enter the port number which you want to use to access Jupyter on your local machine. Choose 8000 or greater (ie 8001, 8002, etc.) to avoid ports used by other services, and set the destination as localhost:8888 where :8888 is the number of the port that Jupyter Notebook is running on. Now click the Add button, and the ports should appear in the Forwarded ports list.
 - Click the Open button to connect to the server via SSH
 In ssh terminal
-- jupyter notebook --no-browser --port=8888
+> jupyter notebook --no-browser --port=8888
 - copy the token in (example) :
 [I 14:51:55.020 NotebookApp] The Jupyter Notebook is running at:
 [I 14:51:55.020 NotebookApp] http://localhost:8888/?token=50db4e03cbecc86825e933                                                                                                                                                             5c54adf6f91b4e6de8338587a2
@@ -40,3 +40,7 @@ From the ssh terminal
 - To detach from the screen session: press Ctrl+A Ctrl+D. You can then disconnect from the host and log in again later and use screen -dr to resume your session.
 - To go to a specific screen window: press Ctrl+A followed by a number.
 Screen will exit when all active windows are closed (or the shells within have exited).
+6. GPU
+https://docs.fast.ai/dev/gpu.html
+Miracle line :
+>nvidia-smi --query-gpu=timestamp,memory.used,memory.total --format=csv -l 1
