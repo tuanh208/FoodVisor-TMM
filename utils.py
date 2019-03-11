@@ -23,6 +23,14 @@ prep1 = transforms.Compose([
                 normalize,
             ])
 
+prep2 = transforms.Compose([
+                transforms.CenterCrop(299),
+                #transforms.RandomSizedCrop(224),
+                #transforms.RandomHorizontalFlip(),
+                transforms.ToTensor(),
+                normalize,
+            ])
+
 def imshow(inp, title=None):
 #   Imshow for Tensor.
     inp = inp.numpy().transpose((1, 2, 0))
