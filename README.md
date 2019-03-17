@@ -12,5 +12,5 @@ After using several methods of data processing (data augmentation, rescale), we 
 - Resnet18 : **0.6667** 
 - InceptionV3 : **0.7217**
 
-For the textual classification, we obtain an accuracy of **0.81** for a neuron network, **0.83** for the SVC Linear. <br />
-The result after combining image and texutal features : **0.8637**.
+For the textual classification, we obtain an accuracy of **0.83** for a neuron network, **0.87** for the SVC Linear. <br />
+The result after combining image and texutal features : **0.8836**.
