@@ -13,4 +13,6 @@ After using several methods of data processing (data augmentation, rescale), we 
 - InceptionV3 : **0.7217**
 
 For the textual classification, we obtain an accuracy of **0.83** for a neuron network, **0.87** for the SVC Linear. <br />
-The result after combining image and texutal features : **0.8836**.
+The result after combining image and texutal features : **0.8836**. <br />
+
+More details on the data as well as results is presented in the file: Projet MAP 583.pdf.
